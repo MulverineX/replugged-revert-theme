@@ -1,16 +1,16 @@
 {
-  "id": "dev.replugged.ThemeTemplate",
-  "name": "Theme Template",
-  "description": "A theme template",
+  "id": "dev.mulverinex.Revert",
+  "name": "Revert",
+  "description": "Revert UI changes that suck",
   "author": {
-    "name": "replugged",
-    "discordID": "1000992611840049192",
-    "github": "replugged-org"
+    "name": "MulverineX",
+    "discordID": "178551656714076161",
+    "github": "MulverineX"
   },
   "version": "1.0.0",
   "updater": {
     "type": "github",
-    "id": "replugged-org/theme-template"
+    "id": "MulverineX/replugged-revert-theme"
   },
   "license": "MIT",
   "type": "replugged-theme",

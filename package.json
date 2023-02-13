@@ -1,7 +1,7 @@
 {
-  "name": "theme-template",
+  "name": "replugged-revert-theme",
   "version": "1.0.0",
-  "description": "A theme template",
+  "description": "Revert UI changes that suck",
   "engines": {
     "node": ">=14.0.0"
   },
@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@parcel/config-default": "^2.8.3",
     "@parcel/core": "^2.8.3",

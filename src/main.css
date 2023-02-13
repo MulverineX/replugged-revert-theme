@@ -1,200 +1,643 @@
+/* Credit to https://github.com/2641a40fd44383320adde4b027a1d0b03bd550/revert-discord */
+
+[class^="sidebarRegion-"] [class^="info-"]> :last-child::after {
+  content: 'Revert Theme (2022-09-11)';
+  display: block;
+}
+
+:root {
+  --chat-spacing: 20px;
+  --right-spacing: calc(var(--chat-spacing) - 16px);
+}
+
+.group-spacing-0 {
+  --f-msg-spacing: 20px;
+}
+
+.group-spacing-4 {
+  --f-msg-spacing: 25px;
+}
+
+.group-spacing-8 {
+  --f-msg-spacing: 30px;
+}
+
+.group-spacing-16 {
+  --f-msg-spacing: 40px;
+}
+
+.group-spacing-24 {
+  --f-msg-spacing: 50px;
+}
+
+[class*="groupStart-"] {
+  margin-top: var(--f-msg-spacing) !important;
+}
+
+[class*="groupStart-"]::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--f-msg-spacing) / 2);
+  left: var(--chat-spacing);
+  right: var(--right-spacing);
+  border-bottom: thin solid var(--background-modifier-accent);
+}
+
+[class^="quotedChatMessage-"] [class*="groupStart-"]::before {
+  display: none;
+}
+
+[class^="divider-"]+li>[class*="groupStart-"],
+[class^="divider-"]+[class^="backgroundFlash-"]>li>[class*="groupStart-"] {
+  margin-top: 0 !important;
+}
+
+[class^="divider-"]+li>[class*="groupStart-"]::before,
+[class^="divider-"]+[class^="backgroundFlash-"]>li>[class*="groupStart-"]::before {
+  display: none;
+}
+
+[class*="message-"][class*="wrapper-"]:not([class*="replying-"]) {
+  background-color: transparent !important;
+}
+
+[class*="message-"][class*="cozyMessage-"] [class*="timestampVisibleOnHover-"] {
+  display: none;
+}
+
+[class*="message-"][class*="cozyMessage-"]>[class*="contents-"]>h2>[class*="headerText-"] {
+  margin-right: 0.3rem;
+}
+
+[class*="message-"][class*="cozyMessage-"]>[class*="contents-"]>h2>[class*="timestamp-"] {
+  margin-left: 0;
+}
+
+[class*="message-"][class*="cozyMessage-"]>[class*="contents-"] [class^="avatar-"] {
+  margin-top: 2px;
+  left: var(--chat-spacing);
+  transform: none;
+}
+
+[class*="message-"][class*="cozyMessage-"]>[class*="contents-"] [class^="avatar-"]:hover {
+  opacity: 0.8;
+}
+
+[class*="message-"][class*="wrapper-"] {
+  padding: 0;
+  padding-left: calc(var(--chat-spacing) + 60px) !important;
+  padding-right: var(--right-spacing) !important;
+}
+
+[class*="message-"][class*="cozyMessage-"]>[class*="contents-"]>[class*="markup-"] {
+  padding-left: calc(var(--chat-spacing) + 60px);
+  margin-left: calc(var(--chat-spacing) * -1 - 60px);
+}
+
+[class*="message-"][class*="cozyMessage-"] [class*="repliedMessage-"]::before {
+  --gutter: 20px;
+}
+
+[class*="message-"][class*="replying-"] {
+  --action-background: var(--brand-experiment-10a);
+  --action-border: var(--brand-experiment);
+  --action-border-secondary: var(--brand-experiment-20a);
+}
+
+[class*="message-"][class*="mentioned-"] {
+  --action-background: var(--background-mentioned);
+  --action-border: var(--info-warning-foreground);
+  --action-border-secondary: var(--background-mentioned-hover);
+}
+
+[class*="message-"][class*="replying-"],
+[class*="message-"][class*="mentioned-"] {
+  background-color: transparent;
+}
+
+[class*="message-"][class*="replying-"]::before,
+[class*="message-"][class*="mentioned-"]::before {
+  background-color: unset;
+  bottom: unset;
+  width: unset;
+}
+
+[class*="message-"][class*="replying-"][class*="cozyMessage-"]>[class*="contents-"]>[class*="markup-"],
+[class*="message-"][class*="mentioned-"][class*="cozyMessage-"]>[class*="contents-"]>[class*="markup-"] {
+  background-color: var(--action-background);
+  padding: 0.1rem 0.2rem;
+  padding-left: calc(6px + 0.2rem);
+  border-radius: 0 3px 3px 0;
+  margin: -0.1rem -0.2rem 0.1rem -6px;
+  position: relative;
+}
+
+[class*="message-"][class*="replying-"][class*="cozyMessage-"]>[class*="contents-"]>[class*="markup-"]::after,
+[class*="message-"][class*="mentioned-"][class*="cozyMessage-"]>[class*="contents-"]>[class*="markup-"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--action-border-secondary);
+  border-left: 4px solid var(--action-border);
+  border-radius: 3px 0 0 3px;
+  width: 2px;
+  height: 100%;
+}
+
+[class*="message-"][class*="replying-"][class*="compact-"]>[class*="contents-"],
+[class*="message-"][class*="mentioned-"][class*="compact-"]>[class*="contents-"] {
+  background-color: var(--action-background);
+  border-radius: 0 3px 3px 0;
+}
+
+#messagesNavigationDescription+[class*="default-"] {
+  border-bottom: none;
+  margin: 0 var(--chat-spacing);
+}
+
+#messagesNavigationDescription+[class*="container-"] {
+  margin: var(--chat-spacing) var(--chat-spacing) 0;
+  border: none;
+}
+
+#messagesNavigationDescription+[class*="container-"]>[class*="emptyMessage-"] {
+  border: none;
+  padding: 0;
+  height: 20px;
+}
+
+#messagesNavigationDescription+[class*="container-"]>[class*="emptyMessage-"]>* {
+  display: none;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] {
+  margin: calc(var(--f-msg-spacing) / 2) var(--right-spacing) calc(var(--f-msg-spacing) / 2) var(--chat-spacing) !important;
+  top: 0 !important;
+  height: 22px;
+  border-top: 0;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"]>[class*="content-"] {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  padding: 0 8px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"]>[class*="content-"]+[class*="unreadPill-"] {
+  display: none;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"]>span::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  border-bottom: thin solid var(--background-modifier-accent);
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"][class*="isUnread-"]>[class*="unreadPill-"] {
+  background-color: var(--background-primary);
+  color: var(--divider-color);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 8px;
+  border-radius: 0;
+  position: initial;
+  top: 0;
+  height: 100%;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"][class*="isUnread-"]>[class*="unreadPill-"]::after {
+  content: '\00a0 MESSAGES';
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"][class*="isUnread-"]>[class*="unreadPill-"] svg {
+  display: none;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"][class*="isUnread-"]>[class*="unreadPill-"]>span::before {
+  border-bottom-color: currentColor;
+  opacity: 0.7;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="cozyMessage-"] [class*="buttons-"][class*="isHeader-"] {
+  top: 1.375rem;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="buttons-"] {
+  top: 0;
+  padding: 0;
+  margin-right: var(--right-spacing);
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="buttons-"]>[class*="wrapper-"] {
+  background-color: transparent;
+  box-shadow: none;
+  display: flex;
+  align-items: flex-start;
+  height: 1.375rem;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="buttons-"]>[class*="wrapper-"]>[class*="button-"] {
+  background-color: transparent !important;
+  padding: 0;
+  min-width: 1rem;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="buttons-"]>[class*="wrapper-"]>[class*="button-"][aria-expanded$="e"]:last-child svg {
+  transform: rotate(90deg);
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="buttons-"]>[class*="wrapper-"]>[class*="button-"],
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="buttons-"]>[class*="wrapper-"]>[class*="button-"] svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"]>[class*="contents-"]>[class*="markup-"]::before {
+  content: '';
+  float: right;
+  display: inline-flex;
+  width: 3rem;
+  height: 1rem;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="cozyMessage-"]>[class*="container-"]:not([class*="button-"]) {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  grid-row-gap: 6px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="reactions-"] {
+  padding: 0;
+  margin: -2px 0;
+  margin-left: -2px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="reactions-"]>div>[class*="reaction-"] {
+  border-radius: 3px;
+  margin: 2px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="reactions-"]>div>[class*="reaction-"] [class*="reactionInner-"] {
+  padding: 0 6px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="reactions-"]>div>[class*="reaction-"] [class*="reactionInner-"]>img {
+  margin: 3px 0;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="reactions-"]>div>[class*="reaction-"] [class*="reactionInner-"]>[class*="reactionCount-"] {
+  margin-left: 6px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"] [class*="reactions-"]>[class*="reactionBtn-"] {
+  margin-left: 6px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"][class*="ephemeral-"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc(-1 * var(--f-msg-spacing) / 2);
+  width: 100%;
+  height: calc(100% + var(--f-msg-spacing));
+  background-image: linear-gradient(90deg, var(--background-secondary) -40%, transparent 50%);
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"][class*="ephemeral-"] [class^="markup-"],
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"][class*="ephemeral-"] [class^="container-"] {
+  position: relative;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="message-"][class*="ephemeral-"] [class*="localBotMessage-"] {
+  margin-top: 0;
+  margin-bottom: -8px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="groupStart-"]:not([class*="message-"]):not([class*="system-"]):not([class*="backgroundFlash-"]) {
+  position: relative;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="groupStart-"]:not([class*="message-"]):not([class*="system-"]):not([class*="backgroundFlash-"]) [class^="blockedSystemMessage-"] {
+  padding: 0;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="groupStart-"]:not([class*="message-"]):not([class*="system-"]):not([class*="backgroundFlash-"]) [class^="blockedSystemMessage-"]>[class^="content-"] {
+  font-size: 14px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="groupStart-"][class*="expanded-"]:not([class*="message-"]):not([class*="system-"]):not([class*="backgroundFlash-"]):not([class*="wrapper-"]) {
+  background-color: transparent;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="groupStart-"][class*="expanded-"]:not([class*="message-"]):not([class*="system-"]):not([class*="backgroundFlash-"]):not([class*="wrapper-"])::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--f-msg-spacing) / 2);
+  width: 100%;
+  height: calc(100% + var(--f-msg-spacing));
+  background-color: var(--background-message-hover);
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="divider-"]+[class^="groupStart-"] {
+  margin-top: 0 !important;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="divider-"]+[class^="groupStart-"]::after {
+  display: none;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="message-"][class*="systemMessage-"][class*="compact-"]>[class*="contents-"] {
+  margin-left: calc(-5rem - 4.5ch);
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="message-"][class*="systemMessage-"]>[class*="container-"] {
+  padding: 0;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="message-"][class*="systemMessage-"] [class*="iconContainer-"] {
+  padding-top: 0;
+  height: 1.375rem;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class^="message-"][class*="systemMessage-"]+[class*="systemMessage-"] {
+  margin-top: 0.125rem;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] form {
+  padding: 0;
+  border-top: 1px solid var(--background-modifier-accent);
+  margin-left: var(--chat-spacing);
+  margin-right: var(--chat-spacing);
+  margin-top: 0;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] form [class^="channelTextArea-"] {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] form [class^="typing-"] {
+  left: 0;
+  right: 0;
+  height: 30px;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [class*="barBase-"] {
+  left: var(--chat-spacing);
+  right: var(--chat-spacing);
+  padding: 0;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [data-list-id="chat-messages"]::after {
+  display: none;
+}
+
+[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] [data-list-id="chat-messages"]>[class^="scrollerSpacer-"] {
+  height: calc(var(--f-msg-spacing) / 2);
+}
+
+[class^="chatContent-"] [class^="contentColumn-"] [class^="firstMessage-"] {
+  margin-top: 0 !important;
+}
+
+[class^="chatContent-"] [class^="contentColumn-"] [class^="firstMessage-"]::after {
+  display: none;
+}
+
+[class^="chatContent-"] [class^="contentColumn-"] [class^="marginTop20-"]+div [class^="mark-"]>[class^="markValue-"] {
+  color: transparent;
+  letter-spacing: -9999px;
+}
+
+[class^="chatContent-"] [class^="contentColumn-"] [class^="marginTop20-"]+div [class^="mark-"]>[class^="markValue-"]::after {
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+
+[class^="chatContent-"] [class^="contentColumn-"] [class^="marginTop20-"]+div [class^="mark-"]:nth-child(1)>[class^="markValue-"]::after {
+  content: '20px';
+}
+
+[class^="chatContent-"] [class^="contentColumn-"] [class^="marginTop20-"]+div [class^="mark-"]:nth-child(2)>[class^="markValue-"]::after {
+  content: '25px';
+}
+
+[class^="chatContent-"] [class^="contentColumn-"] [class^="marginTop20-"]+div [class^="mark-"]:nth-child(3)>[class^="markValue-"]::after {
+  content: '30px';
+}
+
+[class^="chatContent-"] [class^="contentColumn-"] [class^="marginTop20-"]+div [class^="mark-"]:nth-child(4)>[class^="markValue-"]::after {
+  content: '40px';
+  color: var(--text-positive);
+}
+
+[class^="chatContent-"] [class^="contentColumn-"] [class^="marginTop20-"]+div [class^="mark-"]:nth-child(5)>[class^="markValue-"]::after {
+  content: '50px';
+}
+
+
 /* Credit to https://github.com/Overimagine1/old-discord-font */
 
 @font-face {
   font-family: Whitney;
   font-style: normal;
   font-weight: 300;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/46933da896ba96126074286056614542.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/46933da896ba96126074286056614542.woff2) format("woff2");
 }
+
 @font-face {
   font-family: Whitney;
   font-style: italic;
   font-weight: 300;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/1651ce6325c0da043476ace0bec3971b.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/1651ce6325c0da043476ace0bec3971b.woff2) format("woff2");
 }
+
 @font-face {
   font-family: Whitney;
   font-style: normal;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/24bda95d153a319704c33329f3ab84bb.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/24bda95d153a319704c33329f3ab84bb.woff2) format("woff2");
 }
+
 @font-face {
   font-family: Whitney;
   font-style: italic;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/7f18f1d5ab6ded7cf71bbc1f907ee3d4.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/7f18f1d5ab6ded7cf71bbc1f907ee3d4.woff2) format("woff2");
 }
+
 @font-face {
   font-family: Whitney;
   font-style: normal;
   font-weight: 500;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/cf4a8a10bbdf9b775fad41e0b9921c84.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/cf4a8a10bbdf9b775fad41e0b9921c84.woff2) format("woff2");
 }
+
 @font-face {
   font-family: Whitney;
   font-style: italic;
   font-weight: 500;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/9cfa747e897c772d25efd8e4a42a005e.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/9cfa747e897c772d25efd8e4a42a005e.woff2) format("woff2");
 }
+
 @font-face {
   font-family: Whitney;
   font-style: normal;
   font-weight: 600;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/f9e7047f6447547781512ec4b977b2ab.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/f9e7047f6447547781512ec4b977b2ab.woff2) format("woff2");
 }
+
 @font-face {
   font-family: Whitney;
   font-style: italic;
   font-weight: 600;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/21070f52a8a6a61edef9785eaf303fb8.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/21070f52a8a6a61edef9785eaf303fb8.woff2) format("woff2");
 }
+
 @font-face {
   font-family: Whitney;
   font-style: normal;
   font-weight: 700;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/f9c8fcfa7dcc5d6a291a6ebbe3bb847e.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/f9c8fcfa7dcc5d6a291a6ebbe3bb847e.woff2) format("woff2");
 }
+
 @font-face {
   font-family: Whitney;
   font-style: italic;
   font-weight: 700;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/5e1649183589023fb24667a369af585d.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/5e1649183589023fb24667a369af585d.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Normal;
   font-style: normal;
   font-weight: 300;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/ab688947d482808a0b3347f84ebb17a9.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/ab688947d482808a0b3347f84ebb17a9.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Normal;
   font-style: italic;
   font-weight: 300;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/0635f419b122d24f9f60ac4d1066cbc6.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/0635f419b122d24f9f60ac4d1066cbc6.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Normal;
   font-style: normal;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/91dcabd038a2e07ea6fbe7ddb625ecfb.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/91dcabd038a2e07ea6fbe7ddb625ecfb.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Normal;
   font-style: italic;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/ea053183733605b24806f222b067b1e1.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/ea053183733605b24806f222b067b1e1.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Normal;
   font-style: normal;
   font-weight: 500;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/9491a199bd318f1fc38711fb5067f401.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/9491a199bd318f1fc38711fb5067f401.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Normal;
   font-style: italic;
   font-weight: 500;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/f0cf30536a7fa447f0c45fdb3b2a6f28.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/f0cf30536a7fa447f0c45fdb3b2a6f28.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Normal;
   font-style: normal;
   font-weight: 700;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/7d66dfcf8e39f27f163fba8d79577fd8.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/7d66dfcf8e39f27f163fba8d79577fd8.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Normal;
   font-style: italic;
   font-weight: 700;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/9a07cb5ae387a52309b7198543ae5e02.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/9a07cb5ae387a52309b7198543ae5e02.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Nord;
   font-style: normal;
   font-weight: 300;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/5e6f352adb4a6b55ed230f2f91769156.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/5e6f352adb4a6b55ed230f2f91769156.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Nord;
   font-style: italic;
   font-weight: 300;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/30b475dcfa1e8b74d815946e4c18ee09.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/30b475dcfa1e8b74d815946e4c18ee09.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Nord;
   font-style: normal;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/1ace668db419a5014cf75bc116321af3.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/1ace668db419a5014cf75bc116321af3.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Nord;
   font-style: italic;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/50510b66614a2f395530c61b7c9b6827.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/50510b66614a2f395530c61b7c9b6827.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Nord;
   font-style: normal;
   font-weight: 500;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/9e94673570e295b6fb5d4456c4211015.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/9e94673570e295b6fb5d4456c4211015.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Nord;
   font-style: italic;
   font-weight: 500;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/6603a2fb4d2bc997e023972a51938144.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/6603a2fb4d2bc997e023972a51938144.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Nord;
   font-style: normal;
   font-weight: 700;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/87c79174865938aedf188b7344fb0428.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/87c79174865938aedf188b7344fb0428.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Nord;
   font-style: italic;
   font-weight: 700;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/d93311938f51e8608a5d5cb2ea975157.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/d93311938f51e8608a5d5cb2ea975157.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Nord;
   font-style: normal;
   font-weight: 800;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/bc5af8e71e27d363e2eeac75c9628922.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/bc5af8e71e27d363e2eeac75c9628922.woff2) format("woff2");
 }
+
 @font-face {
   font-family: ABC Ginto Nord;
   font-style: italic;
   font-weight: 800;
-  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/dc407fd65057fce34a56bf7b6ebb0b9f.woff2)
-    format("woff2");
+  src: url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/fonts/dc407fd65057fce34a56bf7b6ebb0b9f.woff2) format("woff2");
 }
 
 :root {

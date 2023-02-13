@@ -7,7 +7,7 @@
     "discordID": "178551656714076161",
     "github": "MulverineX"
   },
-  "version": "1.0.0",
+  "version": "1.0.2",
   "updater": {
     "type": "github",
     "id": "MulverineX/replugged-revert-theme"

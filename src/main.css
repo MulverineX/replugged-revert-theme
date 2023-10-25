@@ -1,6 +1,6 @@
 /* Credit to https://github.com/2641a40fd44383320adde4b027a1d0b03bd550/revert-discord */
 
-[class^="sidebarRegion-"] [class^="info-"]> :last-child::after {
+[class^="sidebarRegion_"] [class^="info_"]> :last-child::after {
   content: 'Revert Theme (2022-07-15)';
   display: block;
 }
@@ -30,11 +30,11 @@
   --f-msg-spacing: 50px;
 }
 
-[class*="groupStart-"] {
+[class*="groupStart_"] {
   margin-top: var(--f-msg-spacing) !important;
 }
 
-[class*="groupStart-"]::before {
+[class*="groupStart_"]::before {
   content: "";
   position: absolute;
   top: calc(-1 * var(--f-msg-spacing) / 2);
@@ -43,87 +43,87 @@
   border-bottom: thin solid var(--background-modifier-accent);
 }
 
-[class^="quotedChatMessage-"] [class*="groupStart-"]::before {
+[class^="quotedChatMessage_"] [class*="groupStart_"]::before {
   display: none;
 }
 
-[class^="divider-"]+li>[class*="groupStart-"],
-[class^="divider-"]+[class^="backgroundFlash-"]>li>[class*="groupStart-"] {
+[class^="divider_"]+li>[class*="groupStart_"],
+[class^="divider_"]+[class^="backgroundFlash_"]>li>[class*="groupStart_"] {
   margin-top: 0 !important;
 }
 
-[class^="divider-"]+li>[class*="groupStart-"]::before,
-[class^="divider-"]+[class^="backgroundFlash-"]>li>[class*="groupStart-"]::before {
+[class^="divider_"]+li>[class*="groupStart_"]::before,
+[class^="divider_"]+[class^="backgroundFlash_"]>li>[class*="groupStart_"]::before {
   display: none;
 }
 
-[class^="message-"][class*="wrapper-"]:not([class*="replying-"]) {
+[class^="message_"][class*="wrapper_"]:not([class*="replying_"]) {
   background-color: transparent !important;
 }
 
-[class^="message-"][class*="cozyMessage-"] [class*="timestampVisibleOnHover-"] {
+[class^="message_"][class*="cozyMessage_"] [class*="timestampVisibleOnHover_"] {
   display: none;
 }
 
-[class^="message-"][class*="cozyMessage-"]>[class*="contents-"]>h2>[class*="headerText-"] {
+[class^="message_"][class*="cozyMessage_"]>[class*="contents_"]>h2>[class*="headerText_"] {
   margin-right: 0.3rem;
 }
 
-[class^="message-"][class*="cozyMessage-"]>[class*="contents-"]>h2>[class*="timestamp-"] {
+[class^="message_"][class*="cozyMessage_"]>[class*="contents_"]>h2>[class*="timestamp_"] {
   margin-left: 0;
 }
 
-[class^="message-"][class*="cozyMessage-"]>[class*="contents-"] [class^="avatar-"] {
+[class^="message_"][class*="cozyMessage_"]>[class*="contents_"] [class^="avatar_"] {
   margin-top: 2px;
   left: var(--chat-spacing);
   transform: none;
 }
 
-[class^="message-"][class*="cozyMessage-"]>[class*="contents-"] [class^="avatar-"]:hover {
+[class^="message_"][class*="cozyMessage_"]>[class*="contents_"] [class^="avatar_"]:hover {
   opacity: 0.8;
 }
 
-[class^="message-"][class*="wrapper-"] {
+[class^="message_"][class*="wrapper_"] {
   padding: 0;
   padding-left: calc(var(--chat-spacing) + 60px) !important;
   padding-right: var(--right-spacing) !important;
 }
 
-[class^="message-"][class*="cozyMessage-"]>[class*="contents-"]>[class*="markup-"] {
+[class^="message_"][class*="cozyMessage_"]>[class*="contents_"]>[class*="markup_"] {
   padding-left: calc(var(--chat-spacing) + 60px);
   margin-left: calc(var(--chat-spacing) * -1 - 60px);
 }
 
-[class^="message-"][class*="cozyMessage-"] [class*="repliedMessage-"]::before {
+[class^="message_"][class*="cozyMessage_"] [class*="repliedMessage_"]::before {
   --gutter: 20px;
 }
 
-[class^="message-"][class*="replying-"] {
+[class^="message_"][class*="replying_"] {
   --action-background: var(--brand-experiment-10a);
   --action-border: var(--brand-experiment);
   --action-border-secondary: var(--brand-experiment-20a);
 }
 
-[class^="message-"][class*="mentioned-"] {
+[class^="message_"][class*="mentioned_"] {
   --action-background: var(--background-mentioned);
   --action-border: var(--info-warning-foreground);
   --action-border-secondary: var(--background-mentioned-hover);
 }
 
-[class^="message-"][class*="replying-"],
-[class^="message-"][class*="mentioned-"] {
+[class^="message_"][class*="replying_"],
+[class^="message_"][class*="mentioned_"] {
   background-color: transparent;
 }
 
-[class^="message-"][class*="replying-"]::before,
-[class^="message-"][class*="mentioned-"]::before {
+[class^="message_"][class*="replying_"]::before,
+[class^="message_"][class*="mentioned_"]::before {
   background-color: unset;
   bottom: unset;
   width: unset;
 }
 
-[class^="message-"][class*="replying-"][class*="cozyMessage-"]>[class*="contents-"]>[class*="markup-"],
-[class^="message-"][class*="mentioned-"][class*="cozyMessage-"]>[class*="contents-"]>[class*="markup-"] {
+[class^="message_"][class*="replying_"][class*="cozyMessage_"]>[class*="contents_"]>[class*="markup_"],
+[class^="message_"][class*="mentioned_"][class*="cozyMessage_"]>[class*="contents_"]>[class*="markup_"] {
   background-color: var(--action-background);
   padding: 0.1rem 0.2rem;
   padding-left: calc(6px + 0.2rem);
@@ -132,8 +132,8 @@
   position: relative;
 }
 
-[class^="message-"][class*="replying-"][class*="cozyMessage-"]>[class*="contents-"]>[class*="markup-"]::after,
-[class^="message-"][class*="mentioned-"][class*="cozyMessage-"]>[class*="contents-"]>[class*="markup-"]::after {
+[class^="message_"][class*="replying_"][class*="cozyMessage_"]>[class*="contents_"]>[class*="markup_"]::after,
+[class^="message_"][class*="mentioned_"][class*="cozyMessage_"]>[class*="contents_"]>[class*="markup_"]::after {
   content: '';
   position: absolute;
   top: 0;
@@ -145,51 +145,51 @@
   height: 100%;
 }
 
-[class^="message-"][class*="replying-"][class*="compact-"]>[class*="contents-"],
-[class^="message-"][class*="mentioned-"][class*="compact-"]>[class*="contents-"] {
+[class^="message_"][class*="replying_"][class*="compact_"]>[class*="contents_"],
+[class^="message_"][class*="mentioned_"][class*="compact_"]>[class*="contents_"] {
   background-color: var(--action-background);
   border-radius: 0 3px 3px 0;
 }
 
-#messagesNavigationDescription+[class*="default-"] {
+#messagesNavigationDescription+[class*="default_"] {
   border-bottom: none;
   margin: 0 var(--chat-spacing);
 }
 
-#messagesNavigationDescription+[class*="container-"] {
+#messagesNavigationDescription+[class*="container_"] {
   margin: var(--chat-spacing) var(--chat-spacing) 0;
   border: none;
 }
 
-#messagesNavigationDescription+[class*="container-"]>[class*="emptyMessage-"] {
+#messagesNavigationDescription+[class*="container_"]>[class*="emptyMessage_"] {
   border: none;
   padding: 0;
   height: 20px;
 }
 
-#messagesNavigationDescription+[class*="container-"]>[class*="emptyMessage-"]>* {
+#messagesNavigationDescription+[class*="container_"]>[class*="emptyMessage_"]>* {
   display: none;
 }
 
-[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"] {
+[class^="chatContent_"] [class^="messagesWrapper_"] [class^="divider_"] {
   margin: calc(var(--f-msg-spacing) / 2) var(--right-spacing) calc(var(--f-msg-spacing) / 2) var(--chat-spacing) !important;
   top: 0 !important;
   height: 22px;
   border-top: 0;
 }
 
-[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"]>[class*="content-"] {
+[class^="chatContent_"] [class^="messagesWrapper_"] [class^="divider_"]>[class*="content_"] {
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
   padding: 0 8px;
 }
 
-[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"]>[class*="content-"]+[class*="unreadPill-"] {
+[class^="chatContent_"] [class^="messagesWrapper_"] [class^="divider_"]>[class*="content_"]+[class*="unreadPill_"] {
   display: none;
 }
 
-[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"]>span::before {
+[class^="chatContent_"] [class^="messagesWrapper_"] [class^="divider_"]>span::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -199,7 +199,7 @@
   border-bottom: thin solid var(--background-modifier-accent);
 }
 
-[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"][class*="isUnread-"]>[class*="unreadPill-"] {
+[class^="chatContent_"] [class^="messagesWrapper_"] [class^="divider_"][class*="isUnread_"]>[class*="unreadPill_"] {
   background-color: var(--background-primary);
   color: var(--divider-color);
   font-weight: 600;
@@ -211,30 +211,30 @@
   height: 100%;
 }
 
-[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"][class*="isUnread-"]>[class*="unreadPill-"]::after {
+[class^="chatContent_"] [class^="messagesWrapper_"] [class^="divider_"][class*="isUnread_"]>[class*="unreadPill_"]::after {
   content: "\00a0 MESSAGES";
 }
 
-[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"][class*="isUnread-"]>[class*="unreadPill-"] svg {
+[class^="chatContent_"] [class^="messagesWrapper_"] [class^="divider_"][class*="isUnread_"]>[class*="unreadPill_"] svg {
   display: none;
 }
 
-[class^="chatContent-"] [class^="messagesWrapper-"] [class^="divider-"][class*="isUnread-"]>span::before {
+[class^="chatContent_"] [class^="messagesWrapper_"] [class^="divider_"][class*="isUnread_"]>span::before {
   border-bottom-color: currentColor;
   opacity: 0.7;
 }
 
-[class^="chatContent-"] [class*="cozyMessage-"] [class*="buttons-"][class*="isHeader-"] {
+[class^="chatContent_"] [class*="cozyMessage_"] [class*="buttons_"][class*="isHeader_"] {
   top: 1.375rem;
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="buttons-"] {
+[class^="chatContent_"] [class*="message_"] [class*="buttons_"] {
   top: 0;
   padding: 0;
   margin-right: var(--right-spacing);
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="buttons-"]>[class*="wrapper-"] {
+[class^="chatContent_"] [class*="message_"] [class*="buttons_"]>[class*="wrapper_"] {
   background-color: transparent;
   box-shadow: none;
   display: flex;
@@ -242,7 +242,7 @@
   height: 1.375rem;
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="buttons-"]>[class*="wrapper-"]>[class*="button-"] {
+[class^="chatContent_"] [class*="message_"] [class*="buttons_"]>[class*="wrapper_"]>[class*="button_"] {
   background-color: transparent !important;
   padding: 0;
   min-width: 1rem;
@@ -250,16 +250,16 @@
   height: 1rem;
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="buttons-"]>[class*="wrapper-"]>[class*="button-"][aria-expanded$="e"]:last-child svg {
+[class^="chatContent_"] [class*="message_"] [class*="buttons_"]>[class*="wrapper_"]>[class*="button_"][aria-expanded$="e"]:last-child svg {
   transform: rotate(90deg);
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="buttons-"]>[class*="wrapper-"]>[class*="button-"] svg {
+[class^="chatContent_"] [class*="message_"] [class*="buttons_"]>[class*="wrapper_"]>[class*="button_"] svg {
   width: 1rem;
   height: 1rem;
 }
 
-[class^="chatContent-"] [class*="message-"]>[class*="contents-"]>[class*="markup-"]::before {
+[class^="chatContent_"] [class*="message_"]>[class*="contents_"]>[class*="markup_"]::before {
   content: '';
   float: right;
   display: inline-flex;
@@ -267,40 +267,40 @@
   height: 1rem;
 }
 
-[class^="chatContent-"] [class*="cozyMessage-"]>[class*="container-"]:not([class*="button-"]) {
+[class^="chatContent_"] [class*="cozyMessage_"]>[class*="container_"]:not([class*="button_"]) {
   padding-top: 6px;
   padding-bottom: 6px;
   grid-row-gap: 6px;
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="reactions-"] {
+[class^="chatContent_"] [class*="message_"] [class*="reactions_"] {
   padding: 0;
   margin: -2px 0;
   margin-left: -2px;
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="reactions-"]>div>[class*="reaction-"] {
+[class^="chatContent_"] [class*="message_"] [class*="reactions_"]>div>[class*="reaction_"] {
   border-radius: 3px;
   margin: 2px;
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="reactions-"]>div>[class*="reaction-"] [class*="reactionInner-"] {
+[class^="chatContent_"] [class*="message_"] [class*="reactions_"]>div>[class*="reaction_"] [class*="reactionInner_"] {
   padding: 0 6px;
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="reactions-"]>div>[class*="reaction-"] [class*="reactionInner-"]>img {
+[class^="chatContent_"] [class*="message_"] [class*="reactions_"]>div>[class*="reaction_"] [class*="reactionInner_"]>img {
   margin: 3px 0;
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="reactions-"]>div>[class*="reaction-"] [class*="reactionInner-"]>[class*="reactionCount-"] {
+[class^="chatContent_"] [class*="message_"] [class*="reactions_"]>div>[class*="reaction_"] [class*="reactionInner_"]>[class*="reactionCount_"] {
   margin-left: 6px;
 }
 
-[class^="chatContent-"] [class*="message-"] [class*="reactions-"]>[class*="reactionBtn-"] {
+[class^="chatContent_"] [class*="message_"] [class*="reactions_"]>[class*="reactionBtn_"] {
   margin-left: 6px;
 }
 
-[class^="chatContent-"] [class*="message-"][class*="ephemeral-"]::before {
+[class^="chatContent_"] [class*="message_"][class*="ephemeral_"]::before {
   content: '';
   position: absolute;
   left: 0;
@@ -310,33 +310,33 @@
   background-image: linear-gradient(90deg, var(--background-secondary) -40%, transparent 50%);
 }
 
-[class^="chatContent-"] [class*="message-"][class*="ephemeral-"] [class^="markup-"],
-[class^="chatContent-"] [class*="message-"][class*="ephemeral-"] [class^="container-"] {
+[class^="chatContent_"] [class*="message_"][class*="ephemeral_"] [class^="markup_"],
+[class^="chatContent_"] [class*="message_"][class*="ephemeral_"] [class^="container_"] {
   position: relative;
 }
 
-[class^="chatContent-"] [class*="message-"][class*="ephemeral-"] [class*="localBotMessage-"] {
+[class^="chatContent_"] [class*="message_"][class*="ephemeral_"] [class*="localBotMessage_"] {
   margin-top: 0;
   margin-bottom: -8px;
 }
 
-[class^="chatContent-"] [class^="groupStart-"]:not([class*="message-"]):not([class*="system-"]):not([class*="backgroundFlash-"]) {
+[class^="chatContent_"] [class^="groupStart_"]:not([class*="message_"]):not([class*="system_"]):not([class*="backgroundFlash_"]) {
   position: relative;
 }
 
-[class^="chatContent-"] [class^="groupStart-"]:not([class*="message-"]):not([class*="system-"]):not([class*="backgroundFlash-"]) [class^="blockedSystemMessage-"] {
+[class^="chatContent_"] [class^="groupStart_"]:not([class*="message_"]):not([class*="system_"]):not([class*="backgroundFlash_"]) [class^="blockedSystemMessage_"] {
   padding: 0;
 }
 
-[class^="chatContent-"] [class^="groupStart-"]:not([class*="message-"]):not([class*="system-"]):not([class*="backgroundFlash-"]) [class^="blockedSystemMessage-"]>[class^="content-"] {
+[class^="chatContent_"] [class^="groupStart_"]:not([class*="message_"]):not([class*="system_"]):not([class*="backgroundFlash_"]) [class^="blockedSystemMessage_"]>[class^="content_"] {
   font-size: 14px;
 }
 
-[class^="chatContent-"] [class^="groupStart-"][class*="expanded-"]:not([class*="message-"]):not([class*="system-"]):not([class*="backgroundFlash-"]):not([class*="wrapper-"]) {
+[class^="chatContent_"] [class^="groupStart_"][class*="expanded_"]:not([class*="message_"]):not([class*="system_"]):not([class*="backgroundFlash_"]):not([class*="wrapper_"]) {
   background-color: transparent;
 }
 
-[class^="chatContent-"] [class^="groupStart-"][class*="expanded-"]:not([class*="message-"]):not([class*="system-"]):not([class*="backgroundFlash-"]):not([class*="wrapper-"])::before {
+[class^="chatContent_"] [class^="groupStart_"][class*="expanded_"]:not([class*="message_"]):not([class*="system_"]):not([class*="backgroundFlash_"]):not([class*="wrapper_"])::before {
   content: '';
   position: absolute;
   top: calc(-1 * var(--f-msg-spacing) / 2);
@@ -345,32 +345,32 @@
   background-color: var(--background-message-hover);
 }
 
-[class^="chatContent-"] [class^="divider-"]+[class^="groupStart-"] {
+[class^="chatContent_"] [class^="divider_"]+[class^="groupStart_"] {
   margin-top: 0 !important;
 }
 
-[class^="chatContent-"] [class^="divider-"]+[class^="groupStart-"]::after {
+[class^="chatContent_"] [class^="divider_"]+[class^="groupStart_"]::after {
   display: none;
 }
 
-[class^="chatContent-"] [class^="message-"][class*="systemMessage-"][class*="compact-"]>[class*="contents-"] {
+[class^="chatContent_"] [class^="message_"][class*="systemMessage_"][class*="compact_"]>[class*="contents_"] {
   margin-left: calc(-5rem - 4.5ch);
 }
 
-[class^="chatContent-"] [class^="message-"][class*="systemMessage-"]>[class*="container-"] {
+[class^="chatContent_"] [class^="message_"][class*="systemMessage_"]>[class*="container_"] {
   padding: 0;
 }
 
-[class^="chatContent-"] [class^="message-"][class*="systemMessage-"] [class*="iconContainer-"] {
+[class^="chatContent_"] [class^="message_"][class*="systemMessage_"] [class*="iconContainer_"] {
   padding-top: 0;
   height: 1.375rem;
 }
 
-[class^="chatContent-"] [class^="message-"][class*="systemMessage-"]+[class*="systemMessage-"] {
+[class^="chatContent_"] [class^="message_"][class*="systemMessage_"]+[class*="systemMessage_"] {
   margin-top: 0.125rem;
 }
 
-[class^="chatContent-"] form {
+[class^="chatContent_"] form {
   padding: 0;
   border-top: 1px solid var(--background-modifier-accent);
   margin-left: var(--chat-spacing);
@@ -378,67 +378,67 @@
   margin-top: 0;
 }
 
-[class^="chatContent-"] form [class^="channelTextArea-"] {
+[class^="chatContent_"] form [class^="channelTextArea_"] {
   margin-top: 20px;
   margin-bottom: 30px;
 }
 
-[class^="chatContent-"] form [class^="typing-"] {
+[class^="chatContent_"] form [class^="typing_"] {
   left: 0;
   right: 0;
   height: 30px;
 }
 
-[class^="chatContent-"] [class*="barBase-"] {
+[class^="chatContent_"] [class*="barBase_"] {
   left: var(--chat-spacing);
   right: var(--chat-spacing);
   padding: 0;
 }
 
-[class^="chatContent-"] [data-list-id="chat-messages"]::after {
+[class^="chatContent_"] [data-list-id="chat-messages"]::after {
   display: none;
 }
 
-[class^="chatContent-"] [data-list-id="chat-messages"]>[class^="scrollerSpacer-"] {
+[class^="chatContent_"] [data-list-id="chat-messages"]>[class^="scrollerSpacer_"] {
   height: calc(var(--f-msg-spacing) / 2);
 }
 
-[aria-label="USER_SETTINGS"] [class^="children-"] [class^="firstMessage-"] {
+[aria-label="USER_SETTINGS"] [class^="children_"] [class^="firstMessage_"] {
   margin-top: 0 !important;
 }
 
-[aria-label="USER_SETTINGS"] [class^="children-"] [class^="firstMessage-"]::after {
+[aria-label="USER_SETTINGS"] [class^="children_"] [class^="firstMessage_"]::after {
   display: none;
 }
 
-[aria-label="USER_SETTINGS"] [class^="children-"] [class^="mark-"]>[class^="markValue-"] {
+[aria-label="USER_SETTINGS"] [class^="children_"] [class^="mark_"]>[class^="markValue_"] {
   color: transparent;
   letter-spacing: -9999px;
 }
 
-[aria-label="USER_SETTINGS"] [class^="children-"] [class^="mark-"]>[class^="markValue-"]::after {
+[aria-label="USER_SETTINGS"] [class^="children_"] [class^="mark_"]>[class^="markValue_"]::after {
   color: var(--text-muted);
   letter-spacing: 0;
 }
 
-[aria-label="USER_SETTINGS"] [class^="children-"] [class^="mark-"]:nth-child(1)>[class^="markValue-"]::after {
+[aria-label="USER_SETTINGS"] [class^="children_"] [class^="mark_"]:nth-child(1)>[class^="markValue_"]::after {
   content: '20px';
 }
 
-[aria-label="USER_SETTINGS"] [class^="children-"] [class^="mark-"]:nth-child(2)>[class^="markValue-"]::after {
+[aria-label="USER_SETTINGS"] [class^="children_"] [class^="mark_"]:nth-child(2)>[class^="markValue_"]::after {
   content: '25px';
 }
 
-[aria-label="USER_SETTINGS"] [class^="children-"] [class^="mark-"]:nth-child(3)>[class^="markValue-"]::after {
+[aria-label="USER_SETTINGS"] [class^="children_"] [class^="mark_"]:nth-child(3)>[class^="markValue_"]::after {
   content: '30px';
 }
 
-[aria-label="USER_SETTINGS"] [class^="children-"] [class^="mark-"]:nth-child(4)>[class^="markValue-"]::after {
+[aria-label="USER_SETTINGS"] [class^="children_"] [class^="mark_"]:nth-child(4)>[class^="markValue_"]::after {
   content: '40px';
   color: var(--text-positive);
 }
 
-[aria-label="USER_SETTINGS"] [class^="children-"] [class^="mark-"]:nth-child(5)>[class^="markValue-"]::after {
+[aria-label="USER_SETTINGS"] [class^="children_"] [class^="mark_"]:nth-child(5)>[class^="markValue_"]::after {
   content: '50px';
 }
 
